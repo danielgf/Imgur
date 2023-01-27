@@ -17,6 +17,7 @@
 		6576AEF6298424160041922C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEF5298424160041922C /* Coordinator.swift */; };
 		6576AEF82984252D0041922C /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEF72984252D0041922C /* InitialCoordinator.swift */; };
 		6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFB298434E70041922C /* GalleryCoordinator.swift */; };
+		6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6576AEF5298424160041922C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6576AEF72984252D0041922C /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
 		6576AEFB298434E70041922C /* GalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCoordinator.swift; sourceTree = "<group>"; };
+		6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				6576AEFB298434E70041922C /* GalleryCoordinator.swift */,
+				6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */,
+				6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */,
 				6576AEF6298424160041922C /* Coordinator.swift in Sources */,
 				6576AEC3298407250041922C /* AppDelegate.swift in Sources */,
 				6576AEF82984252D0041922C /* InitialCoordinator.swift in Sources */,

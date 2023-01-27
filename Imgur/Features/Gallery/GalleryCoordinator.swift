@@ -23,6 +23,7 @@ class GalleryCoordinator: Coordinator {
     
     // MARK: - Navigation Functions
     func start() {
-        
+        let gallery = GalleryCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController.pushViewController(gallery, animated: true)
     }
 }
