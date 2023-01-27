@@ -19,6 +19,10 @@
 		6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFB298434E70041922C /* GalleryCoordinator.swift */; };
 		6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */; };
 		6576AF0029843C450041922C /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFF29843C450041922C /* GalleryViewModel.swift */; };
+		6576AF08298442760041922C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF07298442760041922C /* EndPoint.swift */; };
+		6576AF0A2984427E0041922C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF092984427E0041922C /* RequestError.swift */; };
+		6576AF0C298442890041922C /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF0B298442890041922C /* RequestMethod.swift */; };
+		6576AF0E2984428F0041922C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF0D2984428F0041922C /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		6576AEFB298434E70041922C /* GalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCoordinator.swift; sourceTree = "<group>"; };
 		6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		6576AEFF29843C450041922C /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		6576AF07298442760041922C /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		6576AF092984427E0041922C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		6576AF0B298442890041922C /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		6576AF0D2984428F0041922C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		6576AEC1298407250041922C /* Imgur */ = {
 			isa = PBXGroup;
 			children = (
+				6576AF06298442640041922C /* NetworkLayer */,
 				6576AEF3298423CA0041922C /* Application */,
 				6576AEF9298434B60041922C /* Features */,
 				6576AECB298407260041922C /* Assets.xcassets */,
@@ -166,6 +175,17 @@
 				6576AEFF29843C450041922C /* GalleryViewModel.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		6576AF06298442640041922C /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6576AF07298442760041922C /* EndPoint.swift */,
+				6576AF092984427E0041922C /* RequestError.swift */,
+				6576AF0B298442890041922C /* RequestMethod.swift */,
+				6576AF0D2984428F0041922C /* Service.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,11 +343,15 @@
 			files = (
 				6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */,
 				6576AF0029843C450041922C /* GalleryViewModel.swift in Sources */,
+				6576AF08298442760041922C /* EndPoint.swift in Sources */,
 				6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */,
 				6576AEF6298424160041922C /* Coordinator.swift in Sources */,
 				6576AEC3298407250041922C /* AppDelegate.swift in Sources */,
 				6576AEF82984252D0041922C /* InitialCoordinator.swift in Sources */,
 				6576AEC5298407250041922C /* SceneDelegate.swift in Sources */,
+				6576AF0E2984428F0041922C /* Service.swift in Sources */,
+				6576AF0C298442890041922C /* RequestMethod.swift in Sources */,
+				6576AF0A2984427E0041922C /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
