@@ -10,7 +10,6 @@
 		6576AEC3298407250041922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC2298407250041922C /* AppDelegate.swift */; };
 		6576AEC5298407250041922C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC4298407250041922C /* SceneDelegate.swift */; };
 		6576AEC7298407250041922C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC6298407250041922C /* ViewController.swift */; };
-		6576AECA298407250041922C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6576AEC8298407250041922C /* Main.storyboard */; };
 		6576AECC298407260041922C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6576AECB298407260041922C /* Assets.xcassets */; };
 		6576AECF298407260041922C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6576AECD298407260041922C /* LaunchScreen.storyboard */; };
 		6576AEDA298407260041922C /* ImgurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AED9298407260041922C /* ImgurTests.swift */; };
@@ -40,7 +39,6 @@
 		6576AEC2298407250041922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6576AEC4298407250041922C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6576AEC6298407250041922C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6576AEC9298407250041922C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6576AECB298407260041922C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6576AECE298407260041922C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6576AED0298407260041922C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				6576AEC2298407250041922C /* AppDelegate.swift */,
 				6576AEC4298407250041922C /* SceneDelegate.swift */,
 				6576AEC6298407250041922C /* ViewController.swift */,
-				6576AEC8298407250041922C /* Main.storyboard */,
 				6576AECB298407260041922C /* Assets.xcassets */,
 				6576AECD298407260041922C /* LaunchScreen.storyboard */,
 				6576AED0298407260041922C /* Info.plist */,
@@ -234,7 +231,6 @@
 			files = (
 				6576AECF298407260041922C /* LaunchScreen.storyboard in Resources */,
 				6576AECC298407260041922C /* Assets.xcassets in Resources */,
-				6576AECA298407250041922C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6576AEC8298407250041922C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6576AEC9298407250041922C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6576AECD298407260041922C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -464,7 +452,6 @@
 				INFOPLIST_FILE = Imgur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,7 +478,6 @@
 				INFOPLIST_FILE = Imgur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
