@@ -35,7 +35,13 @@ class InitialCoordinator: Coordinator {
     
     // MARK: - Navigation Functions
     func start() {
+        let galleryCoordinator = GalleryCoordinator(
+                    navigationController: navigationController)
         
+        parentCoordinator?.addChildCoordinator(galleryCoordinator)
+        
+        galleryCoordinator.parentCoordinator = parentCoordinator
+        galleryCoordinator.start()
     }
 
 }
