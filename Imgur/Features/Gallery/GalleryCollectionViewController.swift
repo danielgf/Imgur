@@ -6,19 +6,22 @@
 //
 
 import UIKit
+import Combine
 
-private let reuseIdentifier = "Cell"
-
-class GalleryCollectionViewController: UICollectionViewController {
+class GalleryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Variables and Properties
-    var viewModel: GalleryViewModelProtocol
+    var viewModel: GalleryViewModel
+    var subscriptions = Set<AnyCancellable>()
+    private var page: Int = 1
     
     // MARK: - Life cycle
-    init(viewModel: GalleryViewModelProtocol = GalleryViewModel(),
+    init(viewModel: GalleryViewModel = GalleryViewModel(),
          collectionViewLayout layout: UICollectionViewLayout) {
         self.viewModel = viewModel
         super.init(collectionViewLayout: layout)
+        title = "Gallery"
+        performAPIRequest(page: page)
     }
     
     required init?(coder: NSCoder) {
@@ -28,13 +31,42 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        registerCells()
 
         // Do any additional setup after loading the view.
+        bindViewModel()
+    }
+    
+    // MARK: - Internal Functions
+    private func registerCells() {
+        collectionView.register(GalleryCollectionViewCell.self,
+                                forCellWithReuseIdentifier: GalleryCollectionViewCell
+            .identifier)
+    }
+    
+    private func performAPIRequest(page: Int) {
+        viewModel.fetchGallery(page: page)
+    }
+    
+    private func bindViewModel() {
+        viewModel.$isLoading.sink { loading in
+            // TODO: - Implement the loading screen
+            print(loading)
+        }.store(in: &subscriptions)
+        
+        viewModel.$objectViewModel.sink { [weak self] object in
+            if !object.galleryObject.isEmpty {
+                self?.collectionView.reloadData()
+            }
+        }.store(in: &subscriptions)
+        
+        viewModel.$errorMessage.sink { erroMessage in
+            // TODO: - Implement the alert
+            if erroMessage != "" {
+                print(erroMessage)
+            }
+        }.store(in: &subscriptions)
     }
 
     // MARK: - UICollectionViewDataSource
@@ -44,14 +76,33 @@ class GalleryCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return viewModel.objectViewModel.galleryObject.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell
+                .identifier, for: indexPath)
+                as? GalleryCollectionViewCell else { return UICollectionViewCell() }
     
         // Configure the cell
-    
+        cell.updateViewInformations(galleryObject: viewModel.objectViewModel.galleryObject[indexPath.row])
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.objectViewModel.galleryObject.count - 1 {
+            page += 1
+            performAPIRequest(page: page)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    
 }

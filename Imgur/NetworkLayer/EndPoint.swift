@@ -12,8 +12,10 @@ protocol Endpoint {
     var host: String { get }
     var path: String { get }
     var method: RequestMethod { get }
-    var header: [URLQueryItem]? { get }
+    var params: [URLQueryItem]? { get }
+    var headers: [String: String]? { get }
     var body: [String: Any]? { get }
+    var clientID: String { get }
 }
 
 extension Endpoint {
@@ -22,6 +24,10 @@ extension Endpoint {
     }
     
     var host: String {
-        return "api.imgur.com/3"
+        return "api.imgur.com"
+    }
+    
+    var clientID: String {
+        return "Client-ID 1ceddedc03a5d71"
     }
 }
