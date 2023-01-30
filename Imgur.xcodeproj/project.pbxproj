@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65707D682984935C00C0DCD9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65707D672984935C00C0DCD9 /* Gallery.swift */; };
+		65707D6A2984AE6900C0DCD9 /* GalleryObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65707D692984AE6900C0DCD9 /* GalleryObjectViewModel.swift */; };
 		6576AEC3298407250041922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC2298407250041922C /* AppDelegate.swift */; };
 		6576AEC5298407250041922C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC4298407250041922C /* SceneDelegate.swift */; };
-		6576AEC7298407250041922C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEC6298407250041922C /* ViewController.swift */; };
 		6576AECC298407260041922C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6576AECB298407260041922C /* Assets.xcassets */; };
 		6576AECF298407260041922C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6576AECD298407260041922C /* LaunchScreen.storyboard */; };
 		6576AEDA298407260041922C /* ImgurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AED9298407260041922C /* ImgurTests.swift */; };
@@ -17,6 +18,16 @@
 		6576AEE6298407270041922C /* ImgurUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEE5298407270041922C /* ImgurUITestsLaunchTests.swift */; };
 		6576AEF6298424160041922C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEF5298424160041922C /* Coordinator.swift */; };
 		6576AEF82984252D0041922C /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEF72984252D0041922C /* InitialCoordinator.swift */; };
+		6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFB298434E70041922C /* GalleryCoordinator.swift */; };
+		6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */; };
+		6576AF0029843C450041922C /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AEFF29843C450041922C /* GalleryViewModel.swift */; };
+		6576AF08298442760041922C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF07298442760041922C /* EndPoint.swift */; };
+		6576AF0A2984427E0041922C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF092984427E0041922C /* RequestError.swift */; };
+		6576AF0C298442890041922C /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF0B298442890041922C /* RequestMethod.swift */; };
+		6576AF0E2984428F0041922C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF0D2984428F0041922C /* Service.swift */; };
+		6576AF1029844E610041922C /* GalleryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576AF0F29844E610041922C /* GalleryEndpoint.swift */; };
+		658394E9298592B300A21778 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658394E8298592B300A21778 /* GalleryCollectionViewCell.swift */; };
+		658394EC2986C36B00A21778 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 658394EB2986C36B00A21778 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65707D672984935C00C0DCD9 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		65707D692984AE6900C0DCD9 /* GalleryObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryObjectViewModel.swift; sourceTree = "<group>"; };
 		6576AEBF298407250041922C /* Imgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6576AEC2298407250041922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6576AEC4298407250041922C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6576AEC6298407250041922C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6576AECB298407260041922C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6576AECE298407260041922C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6576AED0298407260041922C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +63,15 @@
 		6576AEE5298407270041922C /* ImgurUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6576AEF5298424160041922C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6576AEF72984252D0041922C /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
+		6576AEFB298434E70041922C /* GalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCoordinator.swift; sourceTree = "<group>"; };
+		6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		6576AEFF29843C450041922C /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		6576AF07298442760041922C /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		6576AF092984427E0041922C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		6576AF0B298442890041922C /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		6576AF0D2984428F0041922C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6576AF0F29844E610041922C /* GalleryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryEndpoint.swift; sourceTree = "<group>"; };
+		658394E8298592B300A21778 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658394EC2986C36B00A21778 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +123,9 @@
 		6576AEC1298407250041922C /* Imgur */ = {
 			isa = PBXGroup;
 			children = (
+				6576AF06298442640041922C /* NetworkLayer */,
 				6576AEF3298423CA0041922C /* Application */,
-				6576AEC6298407250041922C /* ViewController.swift */,
+				6576AEF9298434B60041922C /* Features */,
 				6576AECB298407260041922C /* Assets.xcassets */,
 				6576AECD298407260041922C /* LaunchScreen.storyboard */,
 				6576AED0298407260041922C /* Info.plist */,
@@ -146,6 +169,39 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		6576AEF9298434B60041922C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6576AEFA298434C50041922C /* Gallery */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		6576AEFA298434C50041922C /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				6576AEFB298434E70041922C /* GalleryCoordinator.swift */,
+				6576AEFD298438FF0041922C /* GalleryCollectionViewController.swift */,
+				658394E8298592B300A21778 /* GalleryCollectionViewCell.swift */,
+				6576AEFF29843C450041922C /* GalleryViewModel.swift */,
+				65707D692984AE6900C0DCD9 /* GalleryObjectViewModel.swift */,
+				6576AF0F29844E610041922C /* GalleryEndpoint.swift */,
+				65707D672984935C00C0DCD9 /* Gallery.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		6576AF06298442640041922C /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6576AF07298442760041922C /* EndPoint.swift */,
+				6576AF092984427E0041922C /* RequestError.swift */,
+				6576AF0B298442890041922C /* RequestMethod.swift */,
+				6576AF0D2984428F0041922C /* Service.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +219,9 @@
 			dependencies = (
 			);
 			name = Imgur;
+			packageProductDependencies = (
+				658394EB2986C36B00A21778 /* SDWebImage */,
+			);
 			productName = Imgur;
 			productReference = 6576AEBF298407250041922C /* Imgur.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +294,9 @@
 				Base,
 			);
 			mainGroup = 6576AEB6298407250041922C;
+			packageReferences = (
+				658394EA2986C36B00A21778 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 6576AEC0298407250041922C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,11 +361,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6576AEFC298434E70041922C /* GalleryCoordinator.swift in Sources */,
+				658394E9298592B300A21778 /* GalleryCollectionViewCell.swift in Sources */,
+				6576AF0029843C450041922C /* GalleryViewModel.swift in Sources */,
+				65707D682984935C00C0DCD9 /* Gallery.swift in Sources */,
+				6576AF08298442760041922C /* EndPoint.swift in Sources */,
+				6576AEFE298438FF0041922C /* GalleryCollectionViewController.swift in Sources */,
+				6576AF1029844E610041922C /* GalleryEndpoint.swift in Sources */,
 				6576AEF6298424160041922C /* Coordinator.swift in Sources */,
-				6576AEC7298407250041922C /* ViewController.swift in Sources */,
 				6576AEC3298407250041922C /* AppDelegate.swift in Sources */,
 				6576AEF82984252D0041922C /* InitialCoordinator.swift in Sources */,
 				6576AEC5298407250041922C /* SceneDelegate.swift in Sources */,
+				65707D6A2984AE6900C0DCD9 /* GalleryObjectViewModel.swift in Sources */,
+				6576AF0E2984428F0041922C /* Service.swift in Sources */,
+				6576AF0C298442890041922C /* RequestMethod.swift in Sources */,
+				6576AF0A2984427E0041922C /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +701,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		658394EA2986C36B00A21778 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		658394EB2986C36B00A21778 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 658394EA2986C36B00A21778 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6576AEB7298407250041922C /* Project object */;
 }
