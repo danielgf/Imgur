@@ -24,6 +24,15 @@ class GalleryCoordinator: Coordinator {
     // MARK: - Navigation Functions
     func start() {
         let gallery = GalleryCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        gallery.viewModel.coordinator = self
         navigationController.pushViewController(gallery, animated: true)
+    }
+    
+    func showDetailViewController(image object: GalleryObject) {
+        let image = ImageCoordinator(navigationController: navigationController)
+        image.parentCoordinator = self
+        image.object = object
+        childCoordinator.append(image)
+        image.start()
     }
 }

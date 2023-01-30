@@ -17,6 +17,7 @@ final class GalleryViewModel: Service, ObservableObject {
     @Published var objectViewModel: GalleryObjectViewModel = GalleryObjectViewModel()
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
+    weak var coordinator: GalleryCoordinator?
     
     // MARK: - Functions
     
@@ -43,5 +44,9 @@ final class GalleryViewModel: Service, ObservableObject {
                 self?.isLoading.toggle()
             }
             .store(in: &cancellables)
+    }
+    
+    func showDetails(image object: GalleryObject) {
+        coordinator?.showDetailViewController(image: object)
     }
 }
