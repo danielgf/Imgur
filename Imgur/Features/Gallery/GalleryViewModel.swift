@@ -11,12 +11,17 @@ import Combine
 /// I used final for this class to prevent someone to inherit and change anything
 final class GalleryViewModel: Service, ObservableObject {
     
+    // MARK: - Variables and Properties
     var cancellables = Set<AnyCancellable>()
     private var urlSession = URLSession.shared
     @Published var objectViewModel: GalleryObjectViewModel = GalleryObjectViewModel()
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
     
+    // MARK: - Functions
+    
+    /// Function responsible to call the ViewModel Resques function
+    /// - Parameter page: Most receive the page that you want to request
     func fetchGallery(page: Int) {
         
         let endpoint = GalleryEndpoint.animals(animal: "cats", page: page)

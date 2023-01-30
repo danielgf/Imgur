@@ -39,16 +39,21 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     // MARK: - Internal Functions
+    
+    /// Function responsible to register our custom cell
     private func registerCells() {
         collectionView.register(GalleryCollectionViewCell.self,
                                 forCellWithReuseIdentifier: GalleryCollectionViewCell
             .identifier)
     }
     
+    /// Function responsible to call the ViewModel Resques function
+    /// - Parameter page: Most pass the page that you want to request
     private func performAPIRequest(page: Int) {
         viewModel.fetchGallery(page: page)
     }
     
+    /// Function responsible to bind the ViewModel information to our view so if something change the view is updated automatic
     private func bindViewModel() {
         viewModel.$isLoading.sink { loading in
             // TODO: - Implement the loading screen
