@@ -19,6 +19,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
                                                     "icloud.and.arrow.down"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 8
         return imageView
     }()
     
@@ -50,11 +51,17 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     func updateViewInformations(galleryObject object: GalleryObject) {
         
         if let url = URL(string: object.imageLink) {
-            DispatchQueue.main.async { [weak self] in
-                self?.imageView.sd_setImage(with: url,
-                                            placeholderImage:
-                                                UIImage(systemName:
-                                                            "icloud.and.arrow.down"))
+            if object.imageLink.contains(".mp4") {
+                imageView.image = UIImage(systemName: "play.circle")?
+                    .withTintColor(.white, renderingMode: .alwaysOriginal)
+                imageView.backgroundColor = .black
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.sd_setImage(with: url,
+                                                placeholderImage:
+                                                    UIImage(systemName:
+                                                                "icloud.and.arrow.down"))
+                }
             }
         }
     }
