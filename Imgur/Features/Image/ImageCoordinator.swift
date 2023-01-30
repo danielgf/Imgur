@@ -18,11 +18,12 @@ class ImageCoordinator: Coordinator {
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationController.navigationBar.prefersLargeTitles = false
     }
     
     func start() {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .systemRed
+        let controller = ImageViewController()
+        controller.object = object
         navigationController.pushViewController(controller, animated: true)
     }
     
