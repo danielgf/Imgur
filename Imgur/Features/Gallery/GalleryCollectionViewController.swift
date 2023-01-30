@@ -15,6 +15,13 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
     var subscriptions = Set<AnyCancellable>()
     private var page: Int = 1
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     // MARK: - Life cycle
     init(viewModel: GalleryViewModel = GalleryViewModel(),
          collectionViewLayout layout: UICollectionViewLayout) {
@@ -36,6 +43,7 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
 
         // Do any additional setup after loading the view.
         bindViewModel()
+        addItensToView()
     }
     
     // MARK: - Internal Functions
@@ -55,9 +63,12 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
     
     /// Function responsible to bind the ViewModel information to our view so if something change the view is updated automatic
     private func bindViewModel() {
-        viewModel.$isLoading.sink { loading in
-            // TODO: - Implement the loading screen
-            print(loading)
+        viewModel.$isLoading.sink { [weak self] loading in
+            if loading {
+                self?.activityIndicator.startAnimating()
+            } else {
+                self?.activityIndicator.stopAnimating()
+            }
         }.store(in: &subscriptions)
         
         viewModel.$objectViewModel.sink { [weak self] object in
@@ -66,14 +77,37 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
             }
         }.store(in: &subscriptions)
         
-        viewModel.$errorMessage.sink { erroMessage in
-            // TODO: - Implement the alert
+        viewModel.$errorMessage.sink { [weak self] erroMessage in
             if erroMessage != "" {
-                print(erroMessage)
+                self?.showAlert(title: "Error", message: erroMessage)
             }
         }.store(in: &subscriptions)
     }
+    
+    /// Function responsible to add itens to our view
+    private func addItensToView() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.centerYAnchor.constraint(equalTo: view
+            .centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: view
+            .centerXAnchor).isActive = true
+        
+    }
+    
+    /// Function responsible to show an alert to the user
+    /// - Parameters:
+    ///   - title: can receive a alert title to show
+    ///   - message: must receive a message to indicate the status for the user
+    private func showAlert(title: String? = nil, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
+            self?.navigationController?.dismiss(animated: true)
+        }
+        alertController.addAction(action)
 
+        navigationController?.present(alertController, animated: true)
+    }
     // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
