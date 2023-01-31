@@ -43,6 +43,12 @@ struct Gallery: Codable {
         self.images = try container.decodeIfPresent([Images].self, forKey: .images)
     }
     
+    init?(title: String?, cover: String?, images: [Images]?) {
+        self.title = title
+        self.cover = cover
+        self.images = images
+    }
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(self.title, forKey: .title)
@@ -64,6 +70,11 @@ struct Images: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
         self.link = try container.decodeIfPresent(String.self, forKey: .link)
+    }
+    
+    init?(id: String?, link: String?) {
+        self.id = id
+        self.link = link
     }
     
     func encode(to encoder: Encoder) throws {
