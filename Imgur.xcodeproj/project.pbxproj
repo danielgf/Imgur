@@ -31,8 +31,10 @@
 		658394E9298592B300A21778 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658394E8298592B300A21778 /* GalleryCollectionViewCell.swift */; };
 		658394EC2986C36B00A21778 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 658394EB2986C36B00A21778 /* SDWebImage */; };
 		65904D032988690100B91012 /* GalleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65904D022988690100B91012 /* GalleyUITests.swift */; };
-		65904D0629887B0A00B91012 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 65904D0529887B0A00B91012 /* SDWebImage */; };
 		65904D0A29887C1100B91012 /* ImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65904D0929887C1100B91012 /* ImageUITests.swift */; };
+		65BEA5082989B07800685F08 /* GalleryViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BEA5072989B07800685F08 /* GalleryViewModelMock.swift */; };
+		65BEA50A2989B56B00685F08 /* GalleryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BEA5092989B56B00685F08 /* GalleryViewModelTests.swift */; };
+		65BEA50C2989BA9C00685F08 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 65BEA50B2989BA9C00685F08 /* SDWebImage */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		658394E8298592B300A21778 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		65904D022988690100B91012 /* GalleyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleyUITests.swift; sourceTree = "<group>"; };
 		65904D0929887C1100B91012 /* ImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUITests.swift; sourceTree = "<group>"; };
+		65BEA5072989B07800685F08 /* GalleryViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModelMock.swift; sourceTree = "<group>"; };
+		65BEA5092989B56B00685F08 /* GalleryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65904D0629887B0A00B91012 /* SDWebImage in Frameworks */,
+				65BEA50C2989BA9C00685F08 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +160,7 @@
 		6576AED8298407260041922C /* ImgurTests */ = {
 			isa = PBXGroup;
 			children = (
+				65BEA5052989B02200685F08 /* Features */,
 				6576AED9298407260041922C /* ImgurTests.swift */,
 			);
 			path = ImgurTests;
@@ -256,6 +261,23 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		65BEA5052989B02200685F08 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				65BEA5062989B02B00685F08 /* Gallery */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		65BEA5062989B02B00685F08 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				65BEA5072989B07800685F08 /* GalleryViewModelMock.swift */,
+				65BEA5092989B56B00685F08 /* GalleryViewModelTests.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,7 +317,7 @@
 			);
 			name = ImgurTests;
 			packageProductDependencies = (
-				65904D0529887B0A00B91012 /* SDWebImage */,
+				65BEA50B2989BA9C00685F08 /* SDWebImage */,
 			);
 			productName = ImgurTests;
 			productReference = 6576AED5298407260041922C /* ImgurTests.xctest */;
@@ -442,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BEA50A2989B56B00685F08 /* GalleryViewModelTests.swift in Sources */,
 				6576AEDA298407260041922C /* ImgurTests.swift in Sources */,
+				65BEA5082989B07800685F08 /* GalleryViewModelMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,7 +804,7 @@
 			package = 658394EA2986C36B00A21778 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		65904D0529887B0A00B91012 /* SDWebImage */ = {
+		65BEA50B2989BA9C00685F08 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 658394EA2986C36B00A21778 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
